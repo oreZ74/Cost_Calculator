@@ -1,0 +1,6 @@
+.grid {
+    -fx-background-color: #1e453e;
+    -fx-padding: 10;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}

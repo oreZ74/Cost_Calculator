@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<GridPane fx:id="gridPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1200.0" styleClass="grid" stylesheets="@../../Styles/Dashboard.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" >
+    <columnConstraints>
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints maxHeight="346.6666564941406" minHeight="10.0" prefHeight="294.6666564941406" vgrow="ALWAYS" />
+        <RowConstraints maxHeight="405.3333435058594" minHeight="10.0" prefHeight="405.3333435058594" vgrow="ALWAYS" />
+    </rowConstraints>
+    <VBox prefHeight="200.0" prefWidth="100.0">
+        <HBox prefHeight="116.0" prefWidth="400.0" styleClass="card_container" stylesheets="@../../Styles/Card.css">
+            <VBox prefHeight="234.0" prefWidth="195.0" styleClass="card">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LEFT TO SPEND" />
+                <Label fx:id="toSpend_lbl" text="\$1,770,00" />
+            </VBox>
+            <VBox layoutX="20.0" layoutY="20.0" prefHeight="234.0" prefWidth="195.0" styleClass="card">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Income" />
+                <Label fx:id="totalIncome_lbl" text="\$6,400.00" />
+            </VBox>
+        </HBox>
+        <AreaChart prefHeight="178.0" prefWidth="400.0" stylesheets="@../../Styles/Chart.css">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" />
+            </yAxis>
+         <styleClass>
+            <String fx:value="default-color0" />
+            <String fx:value="chart-background" />
+         </styleClass>
+        </AreaChart>
+    </VBox>
+    <VBox prefHeight="294.0" prefWidth="425.0" GridPane.columnIndex="1">
+        <HBox prefHeight="116.0" prefWidth="400.0" styleClass="card_container" stylesheets="@../../Styles/Card.css">
+            <VBox prefHeight="234.0" prefWidth="195.0" styleClass="card">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="TOTAL EXPENSES" />
+                <Label fx:id="totalExpense_lbl" text="\$1,770,00" />
+            </VBox>
+            <VBox layoutX="20.0" layoutY="20.0" prefHeight="234.0" prefWidth="195.0" styleClass="card">
+                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="LEFT TO BUDGET" />
+                <Label fx:id="budget_lbl" text="\$6,400.00" />
+            </VBox>
+        </HBox>
+        <BarChart prefHeight="179.0" prefWidth="400.0" stylesheets="@../../Styles/Chart.css">
+            <xAxis>
+                <CategoryAxis side="BOTTOM" />
+            </xAxis>
+            <yAxis>
+                <NumberAxis side="LEFT" />
+            </yAxis>
+        </BarChart>
+    </VBox>
+    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+        <TableView fx:id="incomeTbl" prefHeight="149.0" prefWidth="400.0" stylesheets="@../../Styles/Table.css">
+            <columns>
+                <TableColumn fx:id="income_name" prefWidth="97.6666259765625" text="INCOME NAME" />
+                <TableColumn fx:id="income_payday" prefWidth="79.33331298828125" text="PAYDAY" />
+                <TableColumn fx:id="income_expected" prefWidth="66.0" text="EXPECTED" />
+                <TableColumn fx:id="income_actual" prefWidth="73.0" text="ACTUAL" />
+                <TableColumn fx:id="income_start" prefWidth="86.0" text="START DAY" />
+            </columns>
+        </TableView>
+        <PieChart prefHeight="145.0" prefWidth="400.0" stylesheets="@../../Styles/Chart.css" />
+    </VBox>
+    <VBox stylesheets="@../../Styles/Table.css" GridPane.rowIndex="1">
+        <Label styleClass="lbl_header" text="BILLS"/>
+        <TableView fx:id="billTbl" prefHeight="415.0" prefWidth="400.0">
+            <columns>
+                <TableColumn fx:id="bill_name" prefWidth="94.33332824707031" text="BILLS NAME"/>
+                <TableColumn fx:id="bill_due" prefWidth="55.66667175292969" text="DUE"/>
+                <TableColumn fx:id="bill_budget" prefWidth="75.0" text="BUDGET"/>
+                <TableColumn fx:id="bill_actual" prefWidth="75.0" text="ACTUAL"/>
+                <TableColumn fx:id="bill_diff" prefWidth="98.0" text="DIFF."/>
+            </columns>
+        </TableView>
+    </VBox>
+    <VBox stylesheets="@../../Styles/Table.css" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Label styleClass="lbl_header" text="EXPENSES"/>
+        <TableView fx:id="expenseTbl" prefHeight="415.0" prefWidth="400.0">
+            <columns>
+                <TableColumn fx:id="expense_name" prefWidth="128.0" text="EXPENSES NAME"/>
+                <TableColumn fx:id="expense_budget" prefWidth="76.66668701171875" text="BUDGET"/>
+                <TableColumn fx:id="expense_actual" prefWidth="99.33331298828125" text="ACTUAL"/>
+                <TableColumn fx:id="expense_diff" prefWidth="94.66668701171875" text="DIFF."/>
+            </columns>
+        </TableView>
+    </VBox>
+    <VBox prefHeight="200.0" prefWidth="100.0" stylesheets="@../../Styles/Table.css" GridPane.columnIndex="2" GridPane.rowIndex="1">
+      <Label styleClass="lbl_header" text="SAVINGS" />
+        <TableView fx:id="savingTbl" prefHeight="200.0" prefWidth="200.0">
+            <columns>
+                <TableColumn fx:id="saving_name" prefWidth="124.88885498046875" text="SAVINGS NAME" />
+                <TableColumn fx:id="saving_budget" prefWidth="83.5555419921875" text="BUDGET" />
+                <TableColumn fx:id="saving_actual" prefWidth="69.33331298828125" text="ACTUAL" />
+                <TableColumn fx:id="saving_diff" prefWidth="120.666748046875" text="DIFF." />
+            </columns>
+        </TableView>
+      <Label styleClass="lbl_header" text="DEBT" />
+        <TableView fx:id="debtTbl" prefHeight="209.0" prefWidth="400.0">
+            <columns>
+                <TableColumn fx:id="debt_name" prefWidth="132.0" text="DEBT NAME" />
+                <TableColumn fx:id="debt_budget" prefWidth="81.11114501953125" text="BUDGET" />
+                <TableColumn fx:id="debt_actual" prefWidth="62.88885498046875" text="ACTUAL" />
+                <TableColumn fx:id="debt_diff" prefWidth="123.33349609375" text="DIFF." />
+            </columns>
+        </TableView>
+    </VBox>
+</GridPane>

@@ -1,0 +1,30 @@
+.card_container{
+    -fx-background-color: #1e453e;
+    -fx-alignment: center;
+    -fx-spacing: 10;
+    -fx-padding: 10 10 10 10;
+}
+
+.card_container Text{
+    -fx-font-family: "Calibri";
+    -fx-font-size: 1em;
+}
+
+.card_container Label{
+    -fx-font-family: "Calibri";
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-font-weight: bold;
+    -fx-font-size: 2em;
+}
+
+.card {
+    -fx-effect: dropshadow(two-pass-box, 	#a3abb3, 6, 0, 0, 4);
+    -fx-stroke: 10;
+    -fx-border-color: #C8C8C8;
+    -fx-alignment: center;
+}
+.card_container VBox {
+    -fx-background-color: linear-gradient(grey 0%, #1e453e 100%);
+    -fx-background-radius: 7px;
+}
